@@ -7,9 +7,24 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   isAuth = false;
-  appareilOne = 'Machine à laver';
-  appareilTwo = 'Frigo';
-  appareilThree = 'Ordinateur';
+
+  appareils=[{
+    name:'Machine à laver',
+    status:'éteint'
+  },
+  {
+    name:'Frigo',
+    status:'Allumé'
+  },
+  {
+    name:'Ordinateur',
+    status:'éteint'
+  }
+
+];
+  // appareilOne = 'Machine à laver';
+  // appareilTwo = 'Frigo';
+  // appareilThree = 'Ordinateur';
   constructor() {
     setTimeout(
       () => {
