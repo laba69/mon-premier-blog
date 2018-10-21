@@ -20,9 +20,9 @@ export class AppComponent {
   // p3: Post = new Post();
   posts: Post[] = [
     {
-      title: 'Mon premier post',
-      content: 'aaaaaaaaaaaaaaa',
-      loveIts: -1,
+      title: 'Mon premier tuto Java',
+      content: 'J\'ai appris à codé en Java u siteduzero.com',
+      loveIts: 1,
       created_at: new Date()
     },
 
