@@ -1,0 +1,26 @@
+<li [ngClass]="{'list-group-item': true,
+                'list-group-item-success': , post.loveIts > 0
+                'list-group-item-danger': post.loveIts <= 0 }">
+  <!-- <div style="width: 20px; height: 20px; background-color: red;" *ngIf="appareilStatus ==='éteint'">
+
+  </div> -->
+  <table>
+    <tr>
+      <td>
+        <h4>{{ post.title }}</h4>
+      </td>
+      <td>{{post.created_at | date : 'short'}}</td>
+    </tr>
+  </table>
+  <output>{{post.content}}</output>
+  <table>
+    <tr>
+      <td>
+        <button class="btn btn-success" (click)="onLoveIt(true)">Love it</button> 
+      </td>
+      <td>
+        <button class="btn btn-succe" (click)="onLoveIt(false)">Don't love it</button> 
+      </td>
+    </tr>
+  </table>
+</li>
