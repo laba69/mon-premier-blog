@@ -1,10 +1,9 @@
-<li [ngClass]="{'list-group-item': true,
-                'list-group-item-success': , post.loveIts > 0
-                'list-group-item-danger': post.loveIts <= 0 }">
-  <!-- <div style="width: 20px; height: 20px; background-color: red;" *ngIf="appareilStatus ==='éteint'">
 
-  </div> -->
-  <table>
+<li [ngClass]="{'list-group-item': true,
+                'list-group-item-success': post.loveIts > 0,
+                'list-group-item-danger': post.loveIts <= 0 }">
+
+ <table>
     <tr>
       <td>
         <h4>{{ post.title }}</h4>
@@ -23,4 +22,5 @@
       </td>
     </tr>
   </table>
+ 
 </li>

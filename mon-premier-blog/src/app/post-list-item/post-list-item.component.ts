@@ -11,7 +11,7 @@ export class PostListItemComponent implements OnInit {
   @Input() post: Post;
 
   constructor() {
-    this.post = new Post();
+
    }
 
   ngOnInit() {
