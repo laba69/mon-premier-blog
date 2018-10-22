@@ -9,29 +9,10 @@ import { Post } from './post';
 export class AppComponent {
   title = 'Posts';
 
-  // posts: Post[];
-  // p1: Post = new Post() {
-  //   title : 'Mon premier post',
-  //   content : 'ssssssssssssssssss',
-  // };
-  // p1.title = 'Mon premier post';
-  // p1.content = 'ssssssssssssssssss';
- // p2: Post = new Post();
-  // p3: Post = new Post();
   posts: Post[] = [
-    {
-      title: 'Mon premier tuto Java',
-      content: 'J\'ai appris à codé en Java u siteduzero.com',
-      loveIts: 1,
-      created_at: new Date()
-    },
-
-    {
-      title: 'Mon deuxieme post',
-      content: 'bbbbbbbbbbbbb',
-      loveIts: 1,
-      created_at: new Date()
-    }
-
+    new Post('Mon premier tuto Java', 'J\'ai appris à codé en Java sur siteduzero.com.\nCette fois j\'apprends Angular :)'),
+    new Post('Faire communiquer angular et java', 'Je suis impatient de savoir mettre un front angular sur mon backend java standalone'),
+    new Post('C\'est sur chouette angular', 'Hello angular\nCoucou angular\nFront-end angular')
   ];
+
 }

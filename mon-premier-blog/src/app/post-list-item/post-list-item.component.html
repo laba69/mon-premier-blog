@@ -1,7 +1,7 @@
 
 <li [ngClass]="{'list-group-item': true,
                 'list-group-item-success': post.loveIts > 0,
-                'list-group-item-danger': post.loveIts <= 0 }">
+                'list-group-item-danger': post.loveIts < 0 }">
 
  <table style="width: 100%;">
     <tr>
@@ -11,7 +11,7 @@
       <td  class="pull-right" >{{post.created_at | date : 'short'}}</td>
     </tr>
   </table>
-  <output>{{post.content}}</output>
+  <output style="white-space: pre-line;" >{{post.content}}</output>
   <table>
     <tr>
       <td>
