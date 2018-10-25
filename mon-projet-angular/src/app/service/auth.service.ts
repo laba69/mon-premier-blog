@@ -1,5 +1,3 @@
-import { resolve } from 'path';
-import { reject } from 'q';
 
 
 export class AuthService {

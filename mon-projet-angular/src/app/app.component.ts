@@ -1,9 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { promise } from 'protractor';
-import { resolve } from 'path';
-import { reject } from 'q';
-
-import { AppareilService } from './service/appareil.service';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Observable, Subscription } from 'rxjs';
+import { interval } from 'rxjs';
 
 
 @Component({
@@ -11,7 +8,34 @@ import { AppareilService } from './service/appareil.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit, OnDestroy {
+
+  secondes: number;
+  counterSubscription: Subscription;
 
   constructor() {}
+
+  ngOnInit() {
+    // const counter = Observable.interval(1000);
+    /*
+    interval(1000).subscribe(
+      (value: number) => {
+        this.secondes = value;
+      },
+      (error: any) => {
+        console.log('Une erreur a été rencontrée');
+      },
+      () => {
+        console.log('Observable complété');
+      }
+    );
+    */
+   this.counterSubscription = interval(1000).subscribe(
+    (value: number) => {
+      this.secondes = value;
+    });
+  }
+  ngOnDestroy(){
+    this.counterSubscription.unsubscribe();
+  }
 }
