@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -7,8 +8,8 @@ import { Subject } from 'rxjs';
 export class AppareilService {
 
   appareilSubject = new Subject<any []>();
-  constructor() { }
-
+  constructor(private httpClient: HttpClient) { }
+/*
   private appareils = [
     {
       id: 1,
@@ -27,7 +28,8 @@ export class AppareilService {
     }
 
   ];
-
+*/
+  private appareils = [];
   emitAppareilSubject() {
     this.appareilSubject.next(this.appareils.slice());
   }
@@ -74,4 +76,32 @@ addAppareil(name: string, status: string) {
   this.emitAppareilSubject();
 }
 
+saveAppareilsToServer() {
+  // avec le methode post, il y aura auatnt de group de istes d'appareils que de posts envoyés
+  // this.httpClient.post('https://http-client-demo-1ba0a.firebaseio.com/appareils.json', this.appareils)
+  this.httpClient.put('https://http-client-demo-1ba0a.firebaseio.com/appareils.json', this.appareils)
+  .subscribe(
+    () => {
+      console.log('Enregistrement terminé !');
+    },
+    (error) => {
+      console.log('Erreur de suavegarde: ' + error);
+    }
+
+
+  );
+}
+
+getAppareilsFromServer() {
+  this.httpClient.get<any[]>('https://http-client-demo-1ba0a.firebaseio.com/appareils.json')
+  .subscribe(
+    (response) => {
+      this.appareils = response;
+      this.emitAppareilSubject();
+    },
+    (error) => {
+      console.log('Erreur de chargement: ' + error);
+    }
+  );
+}
 }
