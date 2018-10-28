@@ -4,7 +4,9 @@
     <div class="col-xs-12">
       <h1>{{post.title}} </h1>
       <h3>{{post.content}} </h3>
-      <p class="list-group-item-text">Nombre de 'loveIts'  {{post.loveIts}} </p>
+      <br>
+      <br>
+      <p class="list-group-item-text" *ngIf="post.created_at">Nombre de 'loveIts' :  {{post.loveIts}} </p>
       <br>
       <button class="btn btn-primary" (click)="onBack()">Retour</button>
     </div>

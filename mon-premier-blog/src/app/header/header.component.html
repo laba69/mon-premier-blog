@@ -1,10 +1,10 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <ul class="nav navbar-nav">
-      <li routerLinkActive="active" >
+      <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
         <a routerLink="posts" >Posts</a>
       </li>
-      <li routerLinkActive="active" >
+      <li routerLinkActive="active"  style="margin-left: 1px" [routerLinkActiveOptions]="{exact: true}">
         <a routerLink="posts/new" >Nouveau post</a>
       </li>
     </ul>
