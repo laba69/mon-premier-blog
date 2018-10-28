@@ -1,4 +1,5 @@
 export class Post {
+    identifiant: number;
     title: string;
     content: string;
     loveIts: number;
