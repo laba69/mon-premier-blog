@@ -15,7 +15,7 @@ export class AppComponent {
     authDomain: 'bookshalves-dd003.firebaseapp.com',
     databaseURL: 'https://bookshalves-dd003.firebaseio.com',
     projectId: 'bookshalves-dd003',
-    storageBucket: '',
+    storageBucket: 'bookshalves-dd003.appspot.com',
     messagingSenderId: '575622147514'
   };
   firebase.initializeApp(config);
