@@ -2,7 +2,7 @@
                 'list-group-item-success': post.loveIts > 0,
                 'list-group-item-danger': post.loveIts < 0 }">
   
-  <h4 class="pull-right" >{{ post.created_at }}</h4>
+  <h5 class="pull-right" >{{ post.created_at }}</h5>
   <div style="cursor: pointer;" (click) ="onViewPost()">
     <h2>{{post.title}} </h2>
     <button class="btn btn-default pull-right" (click)="onDeletePost()"> 
