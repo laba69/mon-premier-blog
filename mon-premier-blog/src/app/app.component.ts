@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Post } from './post';
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-root',
@@ -7,12 +7,18 @@ import { Post } from './post';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Posts';
 
-  posts: Post[] = [
-    new Post('Mon premier tuto Java', 'J\'ai appris à codé en Java sur siteduzero.com.\nCette fois j\'apprends Angular :)'),
-    new Post('Faire communiquer angular et java', 'Je suis impatient de savoir mettre un front angular sur mon backend java standalone'),
-    new Post('C\'est sur chouette angular', 'Hello angular\nCoucou angular\nFront-end angular')
-  ];
+  constructor() {
+    // Initialize Firebase
+  const config = {
+    apiKey: 'AIzaSyB59MwK9_LppEAUQlptprm8XowOiYCZYgs',
+    authDomain: 'bookshalves-dd003.firebaseapp.com',
+    databaseURL: 'https://bookshalves-dd003.firebaseio.com',
+    projectId: 'bookshalves-dd003',
+    storageBucket: 'bookshalves-dd003.appspot.com',
+    messagingSenderId: '575622147514'
+  };
+  firebase.initializeApp(config);
+  }
 
 }

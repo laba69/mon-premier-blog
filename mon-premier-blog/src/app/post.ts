@@ -1,14 +1,14 @@
 export class Post {
-    identifiant: number;
-    title: string;
-    content: string;
-    loveIts: number;
-    created_at: Date;
+    public id: number;
+    public title: string;
+    public content: string;
+    public loveIts: number;
+    public created_at: string;
 
     constructor(title: string, content: string ) {
         this.title = title;
         this.content = content;
-        this.created_at = new Date();
+        this.created_at = new Date().toLocaleString();
         this.loveIts = 0;
     }
 

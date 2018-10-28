@@ -7,14 +7,15 @@ import { PostListItemComponent } from './post-list-item/post-list-item.component
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PostsService } from './services/posts.service';
 import { Routes, RouterModule } from '@angular/router';
-import { PostFormComponent } from './post-form/post-form.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ViewPostComponent } from './view-post/view-post.component';
+import { HeaderComponent } from './header/header.component';
+import { NewPostComponent } from './new-post/new-post.component';
 
 
 const appRoutes: Routes = [
   { path: 'posts', component: PostListComponent },
-  { path: 'posts/new', component: PostFormComponent },
+  { path: 'posts/new', component: NewPostComponent },
   { path: 'posts/view/:id', component: ViewPostComponent },
   { path: '', redirectTo: 'posts', pathMatch: 'full' },
   { path: '**', redirectTo: 'posts' }
@@ -25,8 +26,9 @@ const appRoutes: Routes = [
     AppComponent,
     PostListComponent,
     PostListItemComponent,
-    PostFormComponent,
-    ViewPostComponent
+    NewPostComponent,
+    ViewPostComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
