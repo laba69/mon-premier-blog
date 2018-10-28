@@ -10,13 +10,13 @@ export class AppComponent {
 
   constructor() {
     // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyB59MwK9_LppEAUQlptprm8XowOiYCZYgs",
-    authDomain: "bookshalves-dd003.firebaseapp.com",
-    databaseURL: "https://bookshalves-dd003.firebaseio.com",
-    projectId: "bookshalves-dd003",
-    storageBucket: "",
-    messagingSenderId: "575622147514"
+  const config = {
+    apiKey: 'AIzaSyB59MwK9_LppEAUQlptprm8XowOiYCZYgs',
+    authDomain: 'bookshalves-dd003.firebaseapp.com',
+    databaseURL: 'https://bookshalves-dd003.firebaseio.com',
+    projectId: 'bookshalves-dd003',
+    storageBucket: '',
+    messagingSenderId: '575622147514'
   };
   firebase.initializeApp(config);
   }
